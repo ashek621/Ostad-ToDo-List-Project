@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "41e9e7a0-0e5d-4848-80b6-6b0afa4a77bc",
+		"name": "User ToDO List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23290124"
+	},
+	"item": [
+		{
+			"name": "User Reg & LogIn",
+			"item": [
+				{
+					"name": "CreateUserProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"FirstName\":\"Kazi\",\r\n\"LastName\":\"Munna\",\r\n\"UserName\":\"munna01\",\r\n\"Email\":\"kazimunna304@gmail.com\",\r\n\"Password\":\"Ash1K@z1\",\r\n\"ConfirmPassWord\":\"Ash1K@z1\",\r\n\"ContactNumber\":\"01864096304\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/CreateUserProfile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"CreateUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"UserName\":\"ashek01\",\r\n    \"Password\":\"Ash1K@z1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/UserLogIn",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"UserLogIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectUserProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/SelectUserProfile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"SelectUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserProfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"FirstName\":\"Kazi Mohammod\",\r\n\"LastName\":\"Ashek\",\r\n\"Password\":\"Ash1K@z12345\",\r\n\"ConfirmPassWord\":\"Ash1K@z12345\",\r\n\"ContactNumber\":\"01874712065\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/UpdateUserProfile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"UpdateUserProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User ToDo List",
+			"item": [
+				{
+					"name": "CreateUserToDo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"TodoSubjects\":\"ielts\",\r\n\"TodoDescription\" :\"ielts means International English Language Testing System.\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/CreateUserToDo",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"CreateUserToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectUserToDo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/SelectUserToDo",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"SelectUserToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserToDo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"TodoSubjects\":\"Bangla\",\r\n\"TodoDescription\":\"Sompara College.\",\r\n\"_id\":\"638e36a4830a4ce8ac3d7278\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/UpdateUserToDo",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"UpdateUserToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserToDoStatus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"_id\":\"638e36a4830a4ce8ac3d7278\",\r\n\"TodoStatus\":\"complete\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/UpdateUserToDoStatus",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"UpdateUserToDoStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveUserToDo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"_id\":\"638e36ab830a4ce8ac3d727a\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/RemoveUserToDo",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"RemoveUserToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectUserToDoByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"TodoStatus\":\"complete\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/SelectUserToDoByStatus",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"SelectUserToDoByStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectUserToDoByDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"FormDate\":\"2022-12-01\",\r\n\"ToDate\":\"2022-12-30\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/SelectUserToDoByDate",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"SelectUserToDoByDate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAzNTA3ODgsImRhdGEiOnsiX2lkIjoiNjM4ZTMwNWUyMzIxODEwZjliYzRhN2JhIiwiRmlyc3ROYW1lIjoiS2F6aSIsIkxhc3ROYW1lIjoiTXVubmEiLCJVc2VyTmFtZSI6Im11bm5hMDEiLCJFbWFpbCI6ImthemltdW5uYTMwNEBnbWFpbC5jb20iLCJQYXNzd29yZCI6IkFzaDFLQHoxIiwiQ29uZmlybVBhc3NXb3JkIjoiQXNoMUtAejEiLCJDb250YWN0TnVtYmVyIjoiMDE4NjQwOTYzMDQifSwiaWF0IjoxNjcwMjY0Mzg4fQ.akRXOkAwz7HVnRrnQZzKCXvMYmiDae1G2bCP7wEMatg",
+			"type": "string"
+		}
+	]
+}
